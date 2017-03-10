@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, width=device-width">
+	<title>图片搜索引擎</title>
+</head>
+<body>
+<div id="app" style="display: none;">
+	<section class="list">
+		<header class="header">
+			<span class="login">登录</span>
+			<div class="go-back">
+				<span class="arrow"><span class="arrow green"></span></span>
+			</div>
+			<h1>图片搜索引擎</h1>
+		</header>
+		<div class="search">
+			<input type="text" placeholder="搜素你想要的图片">
+			<span>搜一搜</span>
+		</div>
+		<ul class="type clearfix">
+			<li data-id="0">摄影</li>
+			<li data-id="1">明星</li>
+			<li data-id="2">壁纸</li>
+			<li data-id="3">宠物</li>
+			<li data-id="4">动漫</li>
+			<li data-id="5">风景</li>
+			<li data-id="6">头像</li>
+			<li data-id="7">人物</li>
+		</ul>
+		<div class="image-container">
+			<div class="left-container">
+			</div>
+			<div class="right-container">
+			</div>
+		</div>
+		<span class="go-top">返回<br>顶部</span>
+	</section>
+	<!-- 给layer定义一个位置，供其渲染 -->
+	<section class="layer"></section>
+</div>
+<script type="text/template" id="tpl_layer">
+	<div class="layer-container" style="<%=style%>">
+		<img src="<%=url%>" alt="">
+	</div>
+	<header class="header hide">
+		<div class="go-back">
+			<span class="arrow"><span class="arrow green"></span></span>
+		</div>
+		<h1><%=title%></h1>
+	</header>
+</script>
+<script type="text/javascript" src="static/sea.js"></script>
+<script type="text/javascript" src="static/lib/seajs-css.js"></script>
+<script type="text/javascript" src="static/lib/seajs-preload.js"></script>
+<script type="text/javascript" src="static/lib/zepto.js"></script>
+<script type="text/javascript" src="static/lib/zepto.touch.js"></script>
+<script type="text/javascript" src="static/lib/underscore.js"></script>
+<script type="text/javascript" src="static/lib/backbone.js"></script>
+<script type="text/javascript">
+// 写配置
+seajs.config({
+	// 简化路径书写
+	alias: {
+		layer: 'modules/layer/layer',
+		list: 'modules/list/list',
+		imageModel: 'modules/model/img',
+		imageCollection: 'modules/collection/img'
+	}
+})
+// 引入入口文件
+seajs.use('app', function (app) {
+	// app是一个函数接口，我们直接执行
+	app()
+})
+</script>
+</body>
+</html>

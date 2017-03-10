@@ -1,0 +1,100 @@
+* {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.clearfix:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+.header {
+	height: 60px;
+	background: green;
+	color: #fff;
+	line-height: 60px;
+}
+.header .login {
+	float: right;
+	margin-right: 10px;
+}
+.header h1 {
+	text-align: center;
+}
+.header .go-back {
+	position: relative;
+	float: left;
+}
+.header .arrow {
+	border: 16px solid transparent;
+	border-right: 16px solid #fff;
+	font-size: 0;
+	position: absolute;
+	left: -3px;
+	top: 16px;
+}
+.header .arrow.green {
+	border-right-color: green;
+	top: -16px;
+	left: -12px;
+}
+.search {
+	display: -webkit-box;
+	padding: 10px;
+}
+.search input {
+	-webkit-box-flex: 1;
+	display: block;
+	padding-left: 10px;
+	box-sizing: border-box;
+	border: 1px solid green;
+	outline: none;
+	height: 40px;
+	line-height: 40px;
+}
+.search span {
+	display: inline-block;
+	height: 40px;
+	width: 80px;
+	text-align: center;
+	line-height: 40px;
+	color: #fff;
+	font-weight: bold;
+	background: green;
+}
+.type li {
+	float: left;
+	height: 30px;
+	line-height: 30px;
+	width: 12.5%;
+	text-align: center;
+	font-size: 12px;
+}
+.image-container {
+	display: -webkit-box;
+}
+.left-container,
+.right-container {
+	-webkit-box-flex: 1;
+	font-size: 0;
+}
+.left-container {
+	padding: 6px 3px 6px 6px;
+}
+.right-container {
+	padding: 6px 6px 6px 3px;
+}
+.image-container img {
+	width: 100%;
+	margin-bottom: 6px;
+}
+.go-top {
+	padding: 10px;
+	font-size: 12px;
+	position: fixed;
+	right: 20px;
+	bottom: 80px;
+	background: rgba(0, 0, 0, .4);
+	color: #fff;
+	display: none;
+}
